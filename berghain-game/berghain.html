@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>berghain game</title>
+  <script src="jquery.js"></script>
+</head>
+<body>
+  
+  <div class="game1">
+    <p>Choose the parameters to see if you'd get in:</p>
+
+    <form action="#">
+      <div class="flex1">
+        Your age:<input type="number"  placeholder="choose a number" name="age" min="1" max="120" id="age">
+        <br>Do you know what "zu zweit" means?"
+        <div><input type="radio" value="true" name="yes" id="yes">Yes <input type="radio"  name="no" value="true" id="no">No</div><br>
+        Time of arrival:<input id="time" type="time"><br>
+        What are you wearing:
+
+        <div class="buttons" data-toggle="buttons">
+            <label class="btn btn-default">
+                <img src="images/goggles.png"><br>
+                <input type="checkbox" name="goggles"  value="2" id="goggles"> goggles<br>
+            </label>
+            <label class="btn btn-default">
+                <img src="images/shirt.png"><br>
+                <input type="checkbox" name="shirt"  value="2" id="shirt"> shirt<br>
+            </label>
+            <label class="btn btn-default">
+                <img src="images/leather.png"><br>
+                <input type="checkbox" name="leather"  value="15" id="leather"> leather<br>
+            </label>
+            <label class="btn btn-default">
+                <img src="images/suit.png"><br>
+                <input type="checkbox" name="suit"  value="2" id="suit"> fancy suit<br>
+            </label>
+            <label class="btn btn-default">
+                <img src="images/underwear.png"><br>
+                <input type="checkbox" name="underwear"  value="0" id="underwear"> underwear<br>
+            </label>
+            <label class="btn btn-default">
+                <img src="images/penguin.png"><br>
+                <input type="checkbox" name="penguin"  value="-50" id="penguin"> a costume<br>
+            </label>
+            <label class="btn btn-default">
+                <img src="images/jeans.png"><br>
+                <input type="checkbox" name="jeans"  value="-20" id="jeans"> jeans<br>
+            </label>
+            <label class="btn btn-default">
+                <img src="images/leather.png"><br>
+                <input type="checkbox" name=""  value="10" id="sylicone"> sylicone<br>
+            </label>
+        </div>
+        <button type="button" id="submit">Ready to check?</button>
+      </div>
+      </form>
+      <p id="demo"></p>
+</div>
+
+<div id="finalscreen">
+       <p>..</p>
+    <img src="images/sven1.png" alt="sven">
+   <a href="../index.html">Back to all berlin challenges.</a>
+</div>
+
+<script src="berghain.js"></script>
+</body>
+</html>
