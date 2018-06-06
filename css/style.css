@@ -29,19 +29,10 @@ body {
   position: relative;
   display: flex;
   justify-content: space-between;
-}
-
-#player {
-  position: absolute;
-  color: #FF6978;
-}
-
-.flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 300vh;
-  width: 100vw;
+  background-image: url(../images/background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 45px;
 }
 
 .bergh {
@@ -101,9 +92,48 @@ p {
   width: 700px;
   margin: 10px auto;
   display: flex;
+  background-image: url(../images/sven1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-direction: column;
   justify-content: center;
+  background-position: center; 
 }
 
-#finalscreen img {
-  width: 500px;
+h1, a {
+  text-align: center;
+}
+
+h1 {
+  font-size: 5em;
+  color: #FF6978;
+}
+
+table {
+  margin:0 auto 10px auto;
+  border:1px solid #ccc;
+}
+
+td {
+  height: 30px;
+  width: 30px;
+  border:1px solid #fff;
+  padding:0
+}
+
+td.personCell {
+  background: url(../images/character.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+td.documentCell {
+  background: url(../images/document.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.gameOver, .hide {
+  text-align: center;
+  margin-top: 200px;
 }

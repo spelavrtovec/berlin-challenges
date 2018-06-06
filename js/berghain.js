@@ -13,8 +13,8 @@ $(document).ready(function(){
     var time = $("#time").val(); //it returns a string like: "00:21". I will need to omit the colon first, then parseInt it.
 
   //getting the value from the radio buttons
-    var no = $('input[name=no]:checked').val();
-    var yes = $('input[name=yes]:checked').val();
+    var no = $('input[id=no]:checked').val();
+    var yes = $('input[id=yes]:checked').val();
 
 ///////////////////// math for berghainPoints
 
@@ -30,7 +30,7 @@ $(document).ready(function(){
 
     //if the input of the age is les than 21, the selection doesn't even happen.
     if (age < 21) {
-        return ("You're not old enough to even try, (wo)man!");
+        berghainPoints -= 200;
     };
     
     //if the age is bigger, add it to the berghainPoints
@@ -77,15 +77,15 @@ $(document).ready(function(){
     function displayResult() {
         $(".game1").hide();
         $("#finalscreen").show();
-        $("#finalscreen p").html('"calculating..."');
+        $("#finalscreen h1").html('"calculating..."');
         
         setTimeout(function(){
             if (berghainPoints <= 66) {
-                $("#finalscreen p").html('"Leider nicht (for non-german-speaking: Sorry, no, get lost!)"');//You don't get in
+                $("#finalscreen h1").html('"Leider nicht (for non-german-speaking: Sorry, no, get lost!)"');//You don't get in
                 $("#finalscreen").show();
             }
             else if (berghainPoints > 66) {
-                $("#finalscreen p").html('"You are in!"'); //You get in
+                $("#finalscreen h1").html('"You are in!"'); //You get in
                 $("#finalscreen").show();
             }
         }, 2000);
