@@ -77,16 +77,19 @@ $(document).ready(function(){
     function displayResult() {
         $(".game1").hide();
         $("#finalscreen").show();
+        $(".link").hide();
         $("#finalscreen h1").html('"calculating..."');
         
         setTimeout(function(){
             if (berghainPoints <= 66) {
                 $("#finalscreen h1").html('"Leider nicht (for non-german-speaking: Sorry, no, get lost!)"');//You don't get in
                 $("#finalscreen").show();
+                $(".link").show();
             }
             else if (berghainPoints > 66) {
                 $("#finalscreen h1").html('"You are in!"'); //You get in
                 $("#finalscreen").show();
+                $(".link").show();
             }
         }, 2000);
   

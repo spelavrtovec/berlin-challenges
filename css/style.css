@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=VT323');
 
 body {
-  margin: 0px 50px;
+  margin: 0px;
   background: #B1EDE8;
   font-family: 'VT323', monospace, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -110,8 +110,8 @@ h1 {
 }
 
 table {
-  margin:0 auto 10px auto;
-  border:1px solid #ccc;
+  border:1px solid #FF6978;
+  margin: 10px auto;
 }
 
 td {
@@ -136,4 +136,11 @@ td.documentCell {
 .gameOver, .hide {
   text-align: center;
   margin-top: 200px;
+}
+
+#scoreBoard {
+  float: left;
+  width: 300px;
+  padding-left: 20px;
+  font-size: 3em;
 }
