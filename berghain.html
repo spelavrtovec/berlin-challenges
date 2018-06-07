@@ -9,11 +9,18 @@
   <script src="js/jquery.js"></script>
 </head>
 <body>
-  <div class="game1">
-    <p>Choose the parameters to see if you'd get in:</p>
+        <audio id="my_audio" src="audios/berghain.wav" loop="loop"></audio>
+    <div class="initial">
+                <h1>You'd like to try to get in...</h1>
+                <p>Choose the parameters to see if Sven (the bouncer) would allow you.</p><br>
+                <button type="button" id="start">Let's go.</button>
+    </div>
 
-    <form action="#">
-      <div class="flex1">
+    <div class="game1">
+     <p>Choose the parameters to see if you'd get in:</p>
+
+        <form action="#">
+        <div class="flex1">
         Your age:<input type="number"  placeholder="choose a number" name="age" min="1" max="120" id="age">
         <br>Do you know what "zu zweit" means?
         <div><input type="radio" value="true" name="yesno" id="yes">Yes <input type="radio"  name="yesno" value="true" id="no">No</div><br>

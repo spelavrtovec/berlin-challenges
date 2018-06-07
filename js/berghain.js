@@ -2,9 +2,13 @@
 //Berghain. It also has some amount of randomness to it (because it actually is random in rl). I'll explain the points accumulation as I write the code.
 
 $(document).ready(function(){
-    
     $("#finalscreen").hide(); //by default I'm hiding the final screen.
+    $(".game1").hide();
 
+    $('#start').on('click', function() {
+    $("#my_audio").get(0).play();
+    $(".game1").show();
+    $(".initial").hide();
     $('#submit').on('click',function(){
 
 /////////////////////getting the values from elements
@@ -95,5 +99,6 @@ $(document).ready(function(){
   
   };
   displayResult();
+});
 });
 });

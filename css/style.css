@@ -133,7 +133,7 @@ td.documentCell {
   background-repeat: no-repeat;
 }
 
-.gameOver, .hide {
+.gameOver, .hide, .initial {
   text-align: center;
   margin-top: 200px;
 }

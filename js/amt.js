@@ -3,21 +3,22 @@
 //levels are descriptive and not numeric.
 $(document).ready(function() {
   $("#scoreBoard").hide();
-  
+
   $('#start').on('click', function() {
-          $("#start").hide();
-          $(".hide").hide();
-          $("#scoreBoard").show();
+    $("#my_audio").get(0).play();
+    $("#start").hide();
+    $(".hide").hide();
+    $("#scoreBoard").show();
 
-          var direction = 'right'; //starting direction
-          var speed = 1000; //the starting speed
-          var counter = null;
-          var doc = []; //placeholder for the document 
-          var score = 0; //I'll update that each time the person catches the document
-          var person = [8, 8]; //initial person position
+    var direction = 'right'; //starting direction
+    var speed = 1000; //the starting speed
+    var counter = null;
+    var doc = []; //placeholder for the document 
+    var score = 0; //I'll update that each time the person catches the document
+    var person = [8, 8]; //initial person position
 
 
-          //function for moving the person around
+//function for moving the person around
           function updatepersonCell() {
               var personNew = [];
               switch (direction) {
@@ -35,8 +36,8 @@ $(document).ready(function() {
                       break;
               }
 
-              //when catching the document, this happens
-              var newCell = $('tr').eq(personNew[0]).find('td').eq(personNew[1]);
+//when catching the document, this happens
+var newCell = $('tr').eq(personNew[0]).find('td').eq(personNew[1]);
 
 
 
