@@ -1,6 +1,6 @@
 $(document).ready(function(){
 $(function(){
-  $("#dialog").dialog({  //setting the dialog box displaying each time you open the page
+  $("#dialog").dialog(){  //setting the dialog box displaying each time you open the page
 
     modal: true,
     draggable: true,
