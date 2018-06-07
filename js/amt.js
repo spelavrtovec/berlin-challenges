@@ -3,7 +3,7 @@
 //levels are descriptive and not numeric.
 $(document).ready(function() {
   $("#scoreBoard").hide();
-
+  
   $('#start').on('click', function() {
           $("#start").hide();
           $(".hide").hide();
@@ -101,7 +101,7 @@ $(document).ready(function() {
 
       function createNewDoc() {
           $('td').removeClass('documentCell'); //removing the doc when the person hits it
-          $('tr').eq(getdoc()[0]).find('td').eq(getdoc()[1]).addClass('documentCell'); //adding the class documentCell to a row/column with an index of a random number between 1 and 20.
+          $('tr').eq(getdoc()[0]).find('td').eq(getdoc()[1]).addClass('documentCell');      //adding the class documentCell to a row/column with an index of a random number between 1 and 20.
       }
 
       function movePerson() {
