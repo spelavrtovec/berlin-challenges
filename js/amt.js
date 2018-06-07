@@ -10,7 +10,7 @@ $(document).ready(function() {
           $("#scoreBoard").show();
 
           var direction = 'right'; //starting direction
-          var speed = 300; //the starting speed
+          var speed = 1000; //the starting speed
           var counter = null;
           var doc = []; //placeholder for the document 
           var score = 0; //I'll update that each time the person catches the document
