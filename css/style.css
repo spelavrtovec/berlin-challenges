@@ -5,6 +5,9 @@ body {
   background: #B1EDE8;
   font-family: 'VT323', monospace, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+.flex {
+  height: 100vh;
+}
 
 .berghimg {
   width: 150px;
@@ -23,21 +26,20 @@ body {
 
 #map {
   border: 2px #fffcf9 solid;
-  height: 700px;
-  width: 700px;
-  margin: 10px auto;
+  height: 600px;
+  width: 600px;
+  margin: 20px auto;
   position: relative;
   display: flex;
   justify-content: space-between;
   background-image: url(../images/background.png);
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: 45px;
 }
 
 .bergh {
   align-self: flex-start;
-  padding: 150px 0 0 73px;
+  padding: 130px 0 0 73px;
 }
 
 .burg {
@@ -55,8 +57,7 @@ figcaption {
 
 .game1 {
   border: 2px #fffcf9 solid;
-  height: 700px;
-  width: 700px;
+  width: 600px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -76,7 +77,7 @@ p {
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  margin: 15px;
+  margin: 10px;
   justify-content: space-around;
   align-items: flex-end;
   flex-direction: row;
@@ -88,8 +89,8 @@ p {
 
 #finalscreen {
   border: 2px #fffcf9 solid;
-  height: 700px;
-  width: 700px;
+  height: 600px;
+  width: 600px;
   margin: 10px auto;
   display: flex;
   background-image: url(../images/sven1.png);
@@ -115,8 +116,8 @@ table {
 }
 
 td {
-  height: 30px;
-  width: 30px;
+  height: 26px;
+  width: 26px;
   border:1px solid #fff;
   padding:0
 }
