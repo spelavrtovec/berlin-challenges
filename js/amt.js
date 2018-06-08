@@ -5,77 +5,72 @@ $(document).ready(function() {
   $("#scoreBoard").hide();
 
   $('#start').on('click', function() {
-    $("#my_audio").get(0).play();
     $("#start").hide();
     $(".hide").hide();
     $("#scoreBoard").show();
-
+    $("#my_audio").get(0).play();
+    
     var direction = 'right'; //starting direction
-    var speed = 1000; //the starting speed
-    var counter = null;
+    var speed = 900; //the starting speed
+    var counter = "";
     var doc = []; //placeholder for the document 
     var score = 0; //I'll update that each time the person catches the document
     var person = [8, 8]; //initial person position
 
-
 //function for moving the person around
-          function updatepersonCell() {
-              var personNew = [];
-              switch (direction) {
-                  case 'right':
-                      personNew = [person[0], person[1] + 1];
-                      break;
-                  case 'left':
-                      personNew = [person[0], person[1] - 1];
-                      break;
-                  case 'up':
-                      personNew = [person[0] - 1, person[1]];
-                      break;
-                  case 'down':
-                      personNew = [person[0] + 1, person[1]];
-                      break;
-              }
+        function updatepersonCell() {
+            var personNew = [];
+            switch (direction) {
+                case 'right':
+                    personNew = [person[0], person[1] + 1];
+                    break;
+                case 'left':
+                    personNew = [person[0], person[1] - 1];
+                    break;
+                case 'up':
+                    personNew = [person[0] - 1, person[1]];
+                    break;
+                case 'down':
+                    personNew = [person[0] + 1, person[1]];
+                    break;
+            }
 
-//when catching the document, this happens
 var newCell = $('tr').eq(personNew[0]).find('td').eq(personNew[1]);
+var newCell2 = $('tr').eq(personNew[0]);
 
-
-
-              if (newCell.length == 0) {
-                  gameOver();
-              } else {
-                  if (newCell.hasClass('documentCell')) {
-                      getdoc();
-                      createNewDoc();
-                      score++;
-                      // setting the "levels" of what happens. Each time the person hits the document, a new message is displayed.
-                      switch (score) {
-                        case 1: $('#scoreBoard').html('Score :<br> "Congrats, you finally got a <br>R E A L contract from an <br>A C T U A L landlord"');
-                        break;
-                        case 3:  $('#scoreBoard').html('Score :<br>  "You probably won\'t need this one either."')
-                        break;
-                        case 4: $('#scoreBoard').html('Score :<br>  "You just got a paper, which you don\'t understand, even though you took a german class up to B2"')
-                        break;
-                        case 6: $('#scoreBoard').html('Score :<br>  "Here\'s a paper with the Bürgeramts phone number."')
-                        break;
-                        case 7: $('#scoreBoard').html('Score :<br>  "Even your german friend doesn\'t understand this one."')
-                        break;
-                        case 9: $('#scoreBoard').html('Score :<br>  "That\'s the one with your Bürgeramt waiting in line number."')
-                        break;
-                        default: $('#scoreBoard').html('Score :<br>  "A random document. It is probably useless for what you are trying to do."')
+            if (newCell.length == 0 || newCell2.length == 0) {
+                clearInterval(counter);
+                $("#my_audio-wall").get(0).play();
+                gameOver();
+            } 
+            else if (newCell.hasClass('documentCell')) {
+                $("#my_audio-catch")[0].play();
+                getdoc();
+                createNewDoc();
+                score++;
+// setting the "levels" of what happens. Each time the person hits the document, a new message is displayed.
+                switch (score) {
+                case 1: $('#scoreBoard').html('Score :<br> "Congrats, you finally got a <br>R E A L contract from an <br>A C T U A L landlord"');
+                    break;
+                case 3:  $('#scoreBoard').html('Score :<br>  "You probably won\'t need this one either."')
+                    break;
+                case 4: $('#scoreBoard').html('Score :<br>  "You just got a paper, which you don\'t understand, even though you took a german class up to B2"')
+                    break;
+                case 6: $('#scoreBoard').html('Score :<br>  "Here\'s a paper with the Bürgeramts phone number."')
+                    break;
+                case 7: $('#scoreBoard').html('Score :<br>  "Even your german friend doesn\'t understand this one."')
+                    break;
+                case 9: $('#scoreBoard').html('Score :<br>  "That\'s the one with your Bürgeramt waiting in line number."')
+                    break;
+                default: $('#scoreBoard').html('Score :<br>  "A random document. It is probably useless for what you are trying to do."')
                       }
-                  }
-              }
-              clearInterval(counter);
-              startGame();
-
-              person = personNew;
-              movePerson();
-          }
-
+            }  
+            person = personNew;
+            movePerson();
+    }
       //function for getting a random number
       function getRandomNumber(limit) {
-          return parseInt(Math.random() * limit % limit);
+        return parseInt(Math.random() * limit % limit);
       }
 
       //function for binding keys with the direction
@@ -127,18 +122,20 @@ var newCell = $('tr').eq(personNew[0]).find('td').eq(personNew[1]);
 
       //the updater for the speed and the auto-update of the position
       function startGame() {
-          counter = setInterval(updatepersonCell, speed);
+        counter = setInterval(updatepersonCell, speed);
       }
 
       //initiating the game
-      createBoard(); createNewDoc(); $(document).bind('keydown', getNewDirection); startGame();
+      createBoard(); 
+      createNewDoc(); 
+      $(document).bind('keydown', getNewDirection); 
+      startGame();
 
       //what to display when the game is over
       function gameOver() {
-          $('div.gameOver').show();
-          clearInterval(counter);
-          $("table").hide();
-          $("#scoreBoard").hide();
+        $('div.gameOver').show();
+        $("table").hide();
+        $("#scoreBoard").hide();
       }
   });
 });

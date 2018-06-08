@@ -6,9 +6,10 @@ $(document).ready(function(){
     $(".game1").hide();
 
     $('#start').on('click', function() {
-    $("#my_audio").get(0).play();
-    $(".game1").show();
-    $(".initial").hide();
+        $("#my_audio").get(0).play();
+        $(".game1").show();
+        $(".initial").hide();
+        
     $('#submit').on('click',function(){
 
 /////////////////////getting the values from elements
@@ -86,7 +87,7 @@ $(document).ready(function(){
         
         setTimeout(function(){
             if (berghainPoints <= 66) {
-                $("#finalscreen h1").html('"Leider nicht (for non-german-speaking: Sorry, no, get lost!)"');//You don't get in
+                $("#finalscreen h1").html('"Leider nicht (That means no. But kind of kindly.)"');//You don't get in
                 $("#finalscreen").show();
                 $(".link").show();
             }
